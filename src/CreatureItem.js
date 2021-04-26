@@ -4,8 +4,9 @@ import './CreatureItem.css';
 class CreatureItem extends Component {
   render() {
     return (
-      <>
-      </>
+      <li className="CreatureItem">
+        This is a creature
+      </li>
     );
   }
 }
