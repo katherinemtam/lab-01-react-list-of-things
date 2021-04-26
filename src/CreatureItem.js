@@ -5,7 +5,9 @@ class CreatureItem extends Component {
   render() {
     return (
       <li className="CreatureItem">
-        This is a creature
+        <h2>Creature's Name</h2>
+        <img src="" alt="" />
+        <p>Description</p>
       </li>
     );
   }
