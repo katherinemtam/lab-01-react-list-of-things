@@ -1,8 +1,9 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import CreatureList from './CreatureList';
+import creatures from './creatures';
 import './App.css';
-import React from 'react';
 
 class App extends Component {
 
@@ -15,7 +16,7 @@ class App extends Component {
         <Header />
 
         <main>
-          My React App...
+          <CreatureList creatures={creatures} />
         </main>
 
         <Footer />
