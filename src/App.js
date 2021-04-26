@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CreatureList from './CreatureList';
-import creatures from './creatures';
+import creaturesData from './creatures';
 import './App.css';
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
         <Header />
 
         <main>
-          <CreatureList creatures={creatures} />
+          <CreatureList creaturesProp={creaturesData} />
         </main>
 
         <Footer />

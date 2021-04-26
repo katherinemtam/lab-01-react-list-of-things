@@ -3,11 +3,16 @@ import './CreatureItem.css';
 
 class CreatureItem extends Component {
   render() {
+
+    const creature = this.props.creatureProp;
+    // console.log(creature);
     return (
       <li className="CreatureItem">
-        <h2>Creature's Name</h2>
-        <img src="" alt="" />
-        <p>Description</p>
+
+        <h2>{creature.title}</h2>
+        <img src={creature.url} alt={creature.keyword} />
+        <p>{creature.description}</p>
+
       </li>
     );
   }
