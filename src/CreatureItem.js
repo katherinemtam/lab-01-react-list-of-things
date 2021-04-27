@@ -12,6 +12,7 @@ class CreatureItem extends Component {
         <h2>{creature.title}</h2>
         <img src={creature.url} alt={creature.title} />
         <p>{creature.description}</p>
+        <p>Horns:{creature.horns}</p>
 
       </li>
     );
