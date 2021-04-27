@@ -16,7 +16,8 @@ class App extends Component {
         <Header />
 
         <main>
-          <CreatureList creaturesProp={creaturesData} />
+          <CreatureList
+            creaturesProp={creaturesData} />
         </main>
 
         <Footer />

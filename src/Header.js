@@ -8,12 +8,6 @@ class Header extends Component {
     return (
       <header className="Header">
 
-        <img
-          className="logo"
-          alt="creatures logo"
-          src=""
-        />
-
         <h1>Creatures</h1>
 
       </header>

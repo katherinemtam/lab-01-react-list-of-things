@@ -10,7 +10,7 @@ class CreatureItem extends Component {
       <li className="CreatureItem">
 
         <h2>{creature.title}</h2>
-        <img src={creature.url} alt={creature.keyword} />
+        <img src={creature.url} alt={creature.title} />
         <p>{creature.description}</p>
 
       </li>
