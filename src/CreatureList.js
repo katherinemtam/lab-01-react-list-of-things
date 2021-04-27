@@ -9,7 +9,7 @@ class CreatureList extends Component {
     return (
       <ul className="CreatureList">
         {creatures.map((eachCreatureItem, index) => {
-          return <CreatureItem key={index} creatureProp={eachCreatureItem} />;
+          return <CreatureItem key={index} creatureChildProp={eachCreatureItem} />;
         })}
       </ul>
     );

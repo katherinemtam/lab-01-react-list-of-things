@@ -4,7 +4,7 @@ import './CreatureItem.css';
 class CreatureItem extends Component {
   render() {
 
-    const creature = this.props.creatureProp;
+    const creature = this.props.creatureChildProp;
     // console.log(creature);
     return (
       <li className="CreatureItem">
