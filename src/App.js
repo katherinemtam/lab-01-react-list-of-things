@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CreatureList from './CreatureList';
+import CreatureSearch from './CreatureSearch';
 import creaturesData from './creatures';
 import './App.css';
 
