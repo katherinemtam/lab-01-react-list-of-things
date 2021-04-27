@@ -8,6 +8,10 @@ import './App.css';
 
 class App extends Component {
 
+  handleSearch = (search) => {
+    console.log(search);
+  }
+
   render() {
 
     return (
@@ -16,11 +20,12 @@ class App extends Component {
 
         <Header />
 
-        <CreatureSearch />
+        <CreatureSearch onSearch={this.handleSearch} />
 
         <main>
-          <CreatureList
-            creaturesProp={creaturesData} />
+
+          <CreatureList creaturesProp={creaturesData} />
+
         </main>
 
         <Footer />
