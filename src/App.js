@@ -16,6 +16,8 @@ class App extends Component {
 
         <Header />
 
+        <CreatureSearch />
+
         <main>
           <CreatureList
             creaturesProp={creaturesData} />

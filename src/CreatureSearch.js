@@ -4,7 +4,13 @@ import './CreatureSearch.css';
 class CreatureSearch extends Component {
   state = {}
   render() {
-    return (  );
+    return (
+      <form className="CreatureSearch">
+
+        <button>Search</button>
+
+      </form>
+    );
   }
 }
 
