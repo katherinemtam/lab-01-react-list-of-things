@@ -52,7 +52,7 @@ class CreatureSearch extends Component {
           value={hornFilter}
           onChange={this.handleHornFilter}
         >
-          <option value="">Sort</option>
+          <option value="">Sort by...</option>
           {horns.map(horn => (
             <option
               key={horn}
@@ -62,15 +62,15 @@ class CreatureSearch extends Component {
           ))}
         </select>
 
-
+        <p>All Data:</p>
         <select
           name="sortField"
           value={sortField}
           onChange={this.handleSearchChange}
         >
-          <option value="">Sort</option>
-          <option value="title">by title</option>
-          <option value="horns">by horns</option>
+          <option value="">Sort by...</option>
+          <option value="title">title</option>
+          <option value="horns">horns</option>
         </select>
 
         <button>Search</button>
