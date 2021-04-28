@@ -5,7 +5,7 @@ import './CreatureList.css';
 class CreatureList extends Component {
   render() {
     const creatures = this.props.creaturesProp;
-    // console.log(creatures);
+
     return (
       <ul className="CreatureList">
         {creatures.map((eachCreatureItem, index) => {

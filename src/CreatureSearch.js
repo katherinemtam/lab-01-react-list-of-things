@@ -4,11 +4,16 @@ import './CreatureSearch.css';
 class CreatureSearch extends Component {
   state = {
     nameFilter: '',
+    hornFilter: '',
     sortField: ''
   }
 
   handleNameFilter = ({ target }) => {
     this.setState({ nameFilter: target.value });
+  }
+
+  handleHornFilter = ({ target }) => {
+    this.setState({ hornFilter: target.value });
   }
 
   handleSearchChange = ({ target }) => {
@@ -20,18 +25,43 @@ class CreatureSearch extends Component {
     this.props.onSearch(this.state);
   }
 
+  //takes in props and state ==> update state according to field input
+  componentDidUpdate(prevProp, prevState) {
+    if (prevState !== this.state) {
+      this.props.onSearch(this.state);
+    }
+  }
+
   render() {
 
-    const { nameFilter, sortField } = this.state;
+    const { nameFilter, hornFilter, sortField } = this.state;
+    const { horns } = this.props;
 
     return (
       <form className="CreatureSearch" onSubmit={this.handleSubmit}>
-
+        <p>Name:</p>
         <input
           name="nameFilter"
           value={nameFilter}
           onChange={this.handleNameFilter}
         />
+
+        <p>Horns:</p>
+        <select
+          name="hornFilter"
+          value={hornFilter}
+          onChange={this.handleHornFilter}
+        >
+          <option value="">Sort</option>
+          {horns.map(horn => (
+            <option
+              key={horn}
+              value={horn}
+            > {horn}
+            </option>
+          ))}
+        </select>
+
 
         <select
           name="sortField"
@@ -39,7 +69,7 @@ class CreatureSearch extends Component {
           onChange={this.handleSearchChange}
         >
           <option value="">Sort</option>
-          <option value="name">by name</option>
+          <option value="title">by title</option>
           <option value="horns">by horns</option>
         </select>
 
