@@ -10,21 +10,21 @@
   justify-content: space-between;
 }
 
-.CatSearch input {
+.CreatureSearch input {
   width: 200px;
   height: 30px;
   outline: 0;
   flex-grow: 2;
 }
 
-.CatSearch select {
+.CreatureSearch select {
   width: 150px;
   height: 36px;
   flex-grow: 1;
 }
 
-.CatSearch button {
+.CreatureSearch button {
   height: 36px;
-  width: 36px;
+  width: 100px;
   cursor: pointer;
 }
