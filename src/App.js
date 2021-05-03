@@ -3,20 +3,25 @@ import Header from './Header';
 import Footer from './Footer';
 import CreatureList from './CreatureList';
 import CreatureSearch from './CreatureSearch';
-import creaturesData from './creatures';
+import request from 'superagent';
 import './App.css';
-
-const hornOptions = [...new Set(creaturesData.map(creature => creature.horns))];
 
 class App extends Component {
   state = {
-    creatures: creaturesData
+    creatures: [],
+    hornOptions: [],
   }
 
-  handleSearch = ({ nameFilter, hornFilter, sortField }) => {
+  componentDidMount() {
+    this.handleSearch({});
+  }
+
+  handleSearch = async ({ nameFilter, hornFilter, sortField }) => {
     const nameRegex = new RegExp(nameFilter, 'i');
 
-    const searchedData = creaturesData
+    const response = await request.get('https://express-node-jest-heroku.herokuapp.com/api/creatures');
+    const hornOptions = [...new Set(response.body.map(creature => creature.horns))];
+    const searchedData = response.body
 
       .filter(creature => {
         return creature.title.match(nameRegex);
@@ -34,7 +39,7 @@ class App extends Component {
       });
 
 
-    this.setState({ creatures: searchedData });
+    this.setState({ creatures: searchedData, hornOptions: hornOptions });
 
   }
 
@@ -42,7 +47,7 @@ class App extends Component {
 
     //makes sure original data is shown when no inputs/sort is selected
     //referring to line 11 in initialized state
-    const { creatures } = this.state;
+    const { creatures, hornOptions } = this.state;
 
     return (
 
